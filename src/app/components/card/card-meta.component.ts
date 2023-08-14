@@ -1,9 +1,10 @@
-/**
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/LICENSE
- */
-
-import { ChangeDetectionStrategy, Component, Input, TemplateRef, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  TemplateRef,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   selector: 'nz-card-meta',
@@ -17,14 +18,18 @@ import { ChangeDetectionStrategy, Component, Input, TemplateRef, ViewEncapsulati
     </div>
     <div class="ant-card-meta-detail" *ngIf="nzTitle || nzDescription">
       <div class="ant-card-meta-title" *ngIf="nzTitle">
-        <ng-container *nzStringTemplateOutlet="nzTitle">{{ nzTitle }}</ng-container>
+        <ng-container *nzStringTemplateOutlet="nzTitle">{{
+          nzTitle
+        }}</ng-container>
       </div>
       <div class="ant-card-meta-description" *ngIf="nzDescription">
-        <ng-container *nzStringTemplateOutlet="nzDescription">{{ nzDescription }}</ng-container>
+        <ng-container *nzStringTemplateOutlet="nzDescription">{{
+          nzDescription
+        }}</ng-container>
       </div>
     </div>
   `,
-  host: { class: 'ant-card-meta' }
+  host: { class: 'ant-card-meta' },
 })
 export class NzCardMetaComponent {
   @Input() nzTitle: string | TemplateRef<void> | null = null;
