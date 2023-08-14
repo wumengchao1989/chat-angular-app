@@ -5,12 +5,10 @@
 
 import { Direction, Directionality } from '@angular/cdk/bidi';
 import {
-  AfterContentInit,
   AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
-  ContentChild,
   ElementRef,
   Input,
   NgZone,
@@ -23,7 +21,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { fromEvent, Subject } from 'rxjs';
-import { filter, startWith, takeUntil } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 
 export type NzButtonType =
   | 'primary'
