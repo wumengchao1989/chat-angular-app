@@ -1,8 +1,3 @@
-/**
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/LICENSE
- */
-
 import { Direction, Directionality } from '@angular/cdk/bidi';
 import {
   AfterViewInit,
@@ -90,7 +85,7 @@ export class NzButtonComponent
   private destroy$ = new Subject<void>();
   private loading$ = new Subject<boolean>();
 
-  insertSpan(nodes: NodeList, renderer: Renderer2): void {
+  insertSpan(nodes: Node[], renderer: Renderer2): void {
     nodes.forEach((node) => {
       if (node.nodeName === '#text') {
         const span = renderer.createElement('span');

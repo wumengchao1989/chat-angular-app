@@ -1,4 +1,3 @@
-import { BidiModule } from '@angular/cdk/bidi';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
@@ -18,7 +17,6 @@ import { NzCardComponent } from './card.component';
     NzCardTabComponent,
   ],
   exports: [
-    BidiModule,
     NzCardComponent,
     NzCardGridDirective,
     NzCardMetaComponent,

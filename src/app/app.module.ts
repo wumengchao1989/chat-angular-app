@@ -8,7 +8,12 @@ import { NzButtonModule } from './components/button';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, NzCardModule, NzButtonModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NzCardModule,
+    NzButtonModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
