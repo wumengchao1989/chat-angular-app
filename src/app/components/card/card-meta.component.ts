@@ -1,31 +1,18 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  TemplateRef,
-  ViewEncapsulation,
-} from '@angular/core';
+import { Component, Input, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'nz-card-meta',
   exportAs: 'nzCardMeta',
-  preserveWhitespaces: false,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None,
   template: `
     <div class="ant-card-meta-avatar" *ngIf="nzAvatar">
-      <ng-template [ngTemplateOutlet]="nzAvatar"></ng-template>
+      <ng-container [ngTemplateOutlet]="nzAvatar"></ng-container>
     </div>
     <div class="ant-card-meta-detail" *ngIf="nzTitle || nzDescription">
       <div class="ant-card-meta-title" *ngIf="nzTitle">
-        <ng-container *nzStringTemplateOutlet="nzTitle">{{
-          nzTitle
-        }}</ng-container>
+        <ng-container *ngTemplateOutlet="nzTitle"></ng-container>
       </div>
       <div class="ant-card-meta-description" *ngIf="nzDescription">
-        <ng-container *nzStringTemplateOutlet="nzDescription">{{
-          nzDescription
-        }}</ng-container>
+        <ng-container *ngTemplateOutlet="nzDescription"></ng-container>
       </div>
     </div>
   `,

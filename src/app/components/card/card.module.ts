@@ -1,6 +1,6 @@
-import { BidiModule } from '@angular/cdk/bidi';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { BidiModule } from '@angular/cdk/bidi';
 
 import { NzCardGridDirective } from './card-grid.directive';
 import { NzCardLoadingComponent } from './card-loading.component';

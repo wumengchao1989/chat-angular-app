@@ -1,7 +1,10 @@
+import { enableProdMode, NgModuleRef } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 
+const bootstrap = async (): Promise<void> => {
+  const moduleRef: NgModuleRef<AppModule> = await platformBrowserDynamic().bootstrapModule(AppModule);
+};
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+bootstrap().catch((err) => console.error(err));

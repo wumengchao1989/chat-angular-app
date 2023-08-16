@@ -12,11 +12,11 @@ import {
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <ng-template>
+    <ng-template #template>
       <ng-content></ng-content>
     </ng-template>
   `,
 })
 export class NzCardTabComponent {
-  @ViewChild(TemplateRef, { static: true }) template!: TemplateRef<void>;
+  @ViewChild('template') template!: TemplateRef<void>;
 }

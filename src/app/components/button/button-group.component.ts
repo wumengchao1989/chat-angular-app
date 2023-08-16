@@ -11,7 +11,8 @@ import {
   OnDestroy,
   OnInit,
   Optional,
-  ViewEncapsulation
+  ViewEncapsulation,
+  ViewContainerRef
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -39,9 +40,9 @@ export class NzButtonGroupComponent implements OnDestroy, OnInit {
 
   private destroy$ = new Subject<void>();
 
-  constructor(@Optional() private directionality: Directionality) {}
+  constructor(@Optional() private directionality: Directionality, private viewContainerRef: ViewContainerRef) {}
   ngOnInit(): void {
-    this.dir = this.directionality.value;
+    this.dir = this.directionality.value as Direction;
     this.directionality.change?.pipe(takeUntil(this.destroy$)).subscribe((direction: Direction) => {
       this.dir = direction;
     });

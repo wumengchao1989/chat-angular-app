@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularapp';
+
+  onButtonClick(event: Event) {
+    console.log('Button Clicked');
+  }
 }

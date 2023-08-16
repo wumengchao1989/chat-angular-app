@@ -4,6 +4,7 @@
  */
 
 import { Directive, Input } from '@angular/core';
+
 @Directive({
   selector: '[nz-card-grid]',
   exportAs: 'nzCardGrid',
@@ -13,7 +14,6 @@ import { Directive, Input } from '@angular/core';
   }
 })
 export class NzCardGridDirective {
-  static ngAcceptInputType_nzHoverable: any;
   @Input() nzHoverable = true;
 
   constructor() {}

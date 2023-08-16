@@ -84,10 +84,10 @@ const NZ_CONFIG_MODULE_NAME: any = 'card';
 })
 export class NzCardComponent implements OnDestroy, OnInit {
   readonly _nzModuleName: any = NZ_CONFIG_MODULE_NAME;
-  static ngAcceptInputType_nzBordered: any;
-  static ngAcceptInputType_nzBorderless: any;
-  static ngAcceptInputType_nzLoading: any;
-  static ngAcceptInputType_nzHoverable: any;
+  static ngAcceptInputType_nzBordered: boolean;
+  static ngAcceptInputType_nzBorderless: boolean;
+  static ngAcceptInputType_nzLoading: boolean;
+  static ngAcceptInputType_nzHoverable: boolean;
 
   @Input() nzBordered: boolean = true;
   @Input() nzBorderless: boolean = false;
@@ -96,7 +96,7 @@ export class NzCardComponent implements OnDestroy, OnInit {
   @Input() nzBodyStyle: any = null;
   @Input() nzCover?: TemplateRef<void>;
   @Input() nzActions: Array<TemplateRef<void>> = [];
-  @Input() nzType: string | 'inner' | null = null;
+  @Input() nzType: 'inner' | null = null;
   @Input() nzSize: any = 'default';
   @Input() nzTitle?: string | TemplateRef<void>;
   @Input() nzExtra?: string | TemplateRef<void>;

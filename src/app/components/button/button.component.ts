@@ -1,9 +1,3 @@
-/**
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/LICENSE
- */
-
-import { Direction, Directionality } from '@angular/cdk/bidi';
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -22,6 +16,7 @@ import {
 } from '@angular/core';
 import { fromEvent, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { Direction, Directionality } from '@angular/cdk/bidi';
 
 export type NzButtonType =
   | 'primary'
@@ -76,12 +71,12 @@ export class NzButtonComponent
   static ngAcceptInputType_nzDanger: any;
   static ngAcceptInputType_disabled: any;
 
-  @Input() nzBlock: boolean = false;
-  @Input() nzGhost: boolean = false;
-  @Input() nzSearch: boolean = false;
-  @Input() nzLoading: boolean = false;
-  @Input() nzDanger: boolean = false;
-  @Input() disabled: boolean = false;
+  @Input() nzBlock = false;
+  @Input() nzGhost = false;
+  @Input() nzSearch = false;
+  @Input() nzLoading = false;
+  @Input() nzDanger = false;
+  @Input() disabled = false;
   @Input() tabIndex: number | string | null = null;
   @Input() nzType: NzButtonType = null;
   @Input() nzShape: NzButtonShape = null;
@@ -90,7 +85,7 @@ export class NzButtonComponent
   private destroy$ = new Subject<void>();
   private loading$ = new Subject<boolean>();
 
-  insertSpan(nodes: NodeList, renderer: Renderer2): void {
+  insertSpan(nodes: Node[], renderer: Renderer2): void {
     nodes.forEach((node) => {
       if (node.nodeName === '#text') {
         const span = renderer.createElement('span');
@@ -177,7 +172,7 @@ export class NzButtonComponent
 
   ngAfterViewInit(): void {
     this.assertIconOnly(this.elementRef.nativeElement, this.renderer);
-    this.insertSpan(this.elementRef.nativeElement.childNodes, this.renderer);
+    this.insertSpan(Array.from(this.elementRef.nativeElement.childNodes), this.renderer);
   }
 
   ngOnDestroy(): void {
